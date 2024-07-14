@@ -11,10 +11,18 @@ public class TargetManager : MonoBehaviour
 
     public List<GameObject> targets;
 
+    public TargetSize targetSize;
+    public enum TargetSize
+    {
+        small,
+        medium,
+        large
+    }
+
     public void Start()
     {
         
-
+        //targetSize = TargetSize.medium;
         //SpawnTargets();
 
     }
