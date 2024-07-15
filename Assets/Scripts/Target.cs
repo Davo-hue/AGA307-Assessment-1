@@ -10,12 +10,17 @@ public class Target : MonoBehaviour
 
     //Movement
     GameObject[] moveToPositions;
-     
-    
-    
+
+    public float reachThreshold = 0.2f;
+    public float moveSpeed = 1.0f; // Adjust speed as needed
+
+    private Vector3 targetPosition;
+
 
     void Start()
     {
+        StartCoroutine(Move());
+
         switch (targetSize)
         {
             case TargetSize.small:
@@ -37,20 +42,31 @@ public class Target : MonoBehaviour
 
 
 
-    //private IEnumerator Move()
-    //{
-        
-    //    yield return new WaitForSeconds(Random.Range(1, 3));
-    //    StartCoroutine(Move());
-    //}
+    IEnumerator Move()
+    {
+        while (true) // Infinite loop for continuous movement
+        {
+            // Set new random target position
+            SetRandomTarget();
 
-    private int GetRandomMoveToPos()
-    {
-        int i = Random.Range(0, moveToPositions.Length);
-        return i;
+            // Move towards the current target position
+            while (Vector3.Distance(transform.position, targetPosition) > reachThreshold)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+                yield return null;
+            }
+
+            // At this point, we have reached the current target position
+            // Wait a bit before switching to the next target
+            yield return new WaitForSeconds(0.5f); // Adjust wait time as desired
+        }
     }
-    private void MoveLoop()
+
+    void SetRandomTarget()
     {
-        
+        // Generate a random position within a range (adjust as needed)
+        float randomX = Random.Range(-15f, 15f);
+        float randomY = Random.Range(0f, 10f);
+        targetPosition = new Vector3(randomX, randomY, 0f);
     }
 }

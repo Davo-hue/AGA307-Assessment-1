@@ -4396,6 +4396,8 @@ GameObject:
   m_Component:
   - component: {fileID: 512025531}
   - component: {fileID: 512025532}
+  - component: {fileID: 512025534}
+  - component: {fileID: 512025533}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -4445,6 +4447,33 @@ MonoBehaviour:
   - {fileID: 6775710903175162901, guid: b9fa372a145fd9e40a8510cc97790c07, type: 3}
   targets: []
   targetSize: 0
+--- !u!114 &512025533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512025530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc261797d5e4ee944873bcdc82382057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  enemyCountText: {fileID: 0}
+--- !u!114 &512025534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512025530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb04911a076c8a41b84c589e8b80f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
 --- !u!43 &571578267
 Mesh:
   m_ObjectHideFlags: 0
