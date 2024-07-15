@@ -9,9 +9,9 @@ public class Target : MonoBehaviour
     public TargetSize targetSize;
 
     //Movement
-   
+    GameObject[] moveToPositions;
      
-    private float targetSpeed = 5f;
+    
     
 
     void Start()
@@ -32,22 +32,25 @@ public class Target : MonoBehaviour
                 break;
         }
 
-       
-        
+
     }
 
-  
+
 
     //private IEnumerator Move()
     //{
-    //    for (int i = 0; i < moveDistance; i++)
-    //    {
-    //        transform.Translate(Vector3.forward * Time.deltaTime * targetSpeed);
-    //        yield return null;
-    //    }
-    //    transform.Rotate(Vector3.up * 180);
+        
     //    yield return new WaitForSeconds(Random.Range(1, 3));
     //    StartCoroutine(Move());
     //}
 
+    private int GetRandomMoveToPos()
+    {
+        int i = Random.Range(0, moveToPositions.Length);
+        return i;
+    }
+    private void MoveLoop()
+    {
+        
+    }
 }

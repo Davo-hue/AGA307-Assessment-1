@@ -4444,6 +4444,7 @@ MonoBehaviour:
   - {fileID: 2098533444684069749, guid: b255fcfcbf67b5b4a9e136f89e98b825, type: 3}
   - {fileID: 6775710903175162901, guid: b9fa372a145fd9e40a8510cc97790c07, type: 3}
   targets: []
+  targetSize: 0
 --- !u!43 &571578267
 Mesh:
   m_ObjectHideFlags: 0

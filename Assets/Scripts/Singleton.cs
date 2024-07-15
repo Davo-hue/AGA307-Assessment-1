@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class Singleton <T>:MonoBehaviour where T:MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Singleton <T>:MonoBehaviour where T:MonoBehaviour
         {
             if (instance_ == null)
             {
-                instance_ = GameObject.FindObjectOfType<T>();
+                instance_ = FindFirstObjectByType<T>();
                 if (instance_ == null)
                 {
                     GameObject singleton = new GameObject(typeof(T).Name);

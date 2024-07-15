@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : GameBehaviour
 {
     public float lifeTime = 3f;
 
@@ -19,6 +19,8 @@ public class Projectile : MonoBehaviour
     {
         if(collision.collider.CompareTag("Target"))
         {
+            _GM.score ++;
+            _TM.targets.Remove(collision.gameObject);
             //change color when hit
             collision.gameObject.GetComponentInChildren<Renderer>().material.color = Color.red;
             //destroy after 1 second
