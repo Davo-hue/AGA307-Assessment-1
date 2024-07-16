@@ -41,6 +41,7 @@ public class TargetManager : Singleton<TargetManager>
         int rndSpawn = Random.Range(0, spawnPoints.Length);
         GameObject target = Instantiate(targetTypes[rndTarget], spawnPoints[rndSpawn].position, spawnPoints[rndSpawn].rotation);
         targets.Add(target);
+        //_UI.UpdateTargetCount(targets.Count);
         print("Target Count is: " + GetTargetCount());
     }
     void SpawnTargets()
@@ -52,7 +53,7 @@ public class TargetManager : Singleton<TargetManager>
         
     }
 
-    private int GetTargetCount()
+    public int GetTargetCount()
     {
         return targets.Count;
     }

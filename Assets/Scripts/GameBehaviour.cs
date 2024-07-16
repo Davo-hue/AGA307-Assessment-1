@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class GameBehaviour : MonoBehaviour
+public class GameBehaviour : Singleton<GameBehaviour>
 {
     protected static GameManager _GM { get { return GameManager.instance; } }
     protected static TargetManager _TM { get { return TargetManager.instance; } }
